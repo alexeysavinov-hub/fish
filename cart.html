@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Корзина — Порт 41</title>
+<meta name="description" content="Оформление заказа — Порт 41">
+<meta name="theme-color" content="#FBF7F0">
+<link rel="icon" href="assets/mark-on-light.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="cart">
+<main>
+
+<section class="wrap page-head">
+  <div class="crumbs"><a href="index.html">Главная</a><span>/</span><span>Корзина</span></div>
+  <h1>Корзина</h1>
+</section>
+<section class="wrap" id="cart-wrap">
+  <div class="empty-state hidden" id="cart-empty"><h3>Корзина пуста</h3>Добавьте что-нибудь из каталога — икру, рыбу или краба.<br><br><a class="btn" href="catalog.html">В каталог</a></div>
+  <div class="cart-page" id="cart-page">
+    <div>
+      <div class="cart-list" id="cart-list"></div>
+      <form class="form" id="order" novalidate>
+        <h3>Получатель</h3>
+        <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name_" placeholder="Как к вам обращаться" autocomplete="name"></div>
+        <div class="field"><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel"></div>
+        <h3>Доставка</h3>
+        <div class="radios">
+          <label><input type="radio" name="delivery" value="courier" checked><span>Курьером по Москве<small>Сегодня при заказе до 14:00*</small></span><span class="r-price">490 ₽</span></label>
+          <label><input type="radio" name="delivery" value="pickup"><span>Самовывоз<small>Малая Семёновская 11/2, стр. 7 · 10:00–18:00</small></span><span class="r-price">0 ₽</span></label>
+          <label><input type="radio" name="delivery" value="russia"><span>По России<small>Транспортной компанией, 2–5 дней</small></span><span class="r-price">по расчёту</span></label>
+        </div>
+        <div class="field"><label for="f-addr">Адрес</label><input id="f-addr" name="address" placeholder="Улица, дом, квартира" autocomplete="street-address"></div>
+        <h3>Оплата</h3>
+        <div class="radios">
+          <label><input type="radio" name="pay" value="online" checked><span>Онлайн картой<small>Ссылка на оплату придёт в SMS</small></span></label>
+          <label><input type="radio" name="pay" value="cash"><span>При получении<small>Наличными или картой курьеру</small></span></label>
+        </div>
+        <div class="field"><label for="f-comment">Комментарий</label><textarea id="f-comment" name="comment" placeholder="Домофон, удобное время, пожелания по весу"></textarea></div>
+        <button class="btn coral block" type="submit" style="height:56px">Оформить заказ</button>
+        <p class="consent">Нажимая кнопку, вы соглашаетесь с <a href="#" style="text-decoration:underline">политикой конфиденциальности</a>. Менеджер перезвонит для подтверждения веса и времени.</p>
+      </form>
+    </div>
+    <div class="summary" id="summary"></div>
+  </div>
+</section>
+</main>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

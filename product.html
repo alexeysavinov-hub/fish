@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Товар — Порт 41</title>
+<meta name="description" content="Карточка товара — Порт 41">
+<meta name="theme-color" content="#FBF7F0">
+<link rel="icon" href="assets/mark-on-light.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="product">
+<main>
+
+<section class="wrap">
+  <div class="page-head" style="padding-top:16px"><div class="crumbs" id="crumbs"></div></div>
+  <div class="product">
+    <div class="pd-gallery" id="gallery"></div>
+    <div class="pd-info">
+      <div class="eyebrow" id="pd-cat"></div>
+      <h1 id="pd-name"></h1>
+      <p class="sub" id="pd-sub"></p>
+      <div class="pd-price" id="pd-price"></div>
+      <div class="opts" id="opts"></div>
+      <div class="pd-actions"><div class="qty lg" id="qty"><button data-q="-" aria-label="Меньше">−</button><span>1</span><button data-q="+" aria-label="Больше">+</button></div><button class="btn coral" id="buy">В корзину</button></div>
+      <div class="pd-perks">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><span>Доставка по Москве в день заказа*, бесплатно от 5 000 ₽</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 16 0v2H4z"/><path d="M2 14h20"/><path d="M12 4V2"/></svg><span>Дегустация перед покупкой в магазине</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg><span>Термобокс с хладоэлементами</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Оплата при получении или онлайн</span></div>
+      </div>
+    </div>
+    <div class="pd-tabs">
+      <div class="tabs" id="pd-tabs"><button class="on" data-panel="desc">Описание</button><button data-panel="spec">Характеристики</button><button data-panel="deliv">Доставка</button></div>
+      <div class="pd-panel" id="desc"></div>
+      <dl class="pd-panel spec hidden" id="spec"></dl>
+      <div class="pd-panel hidden" id="deliv"><p><strong>Москва</strong> — курьером в день заказа при оформлении до 14:00*. 490 ₽, бесплатно от 5 000 ₽. Самовывоз: Малая Семёновская ул., 11/2, стр. 7, Пн–Вс 10:00–18:00.</p><p><strong>Россия</strong> — транспортными компаниями в термоупаковке, 2–5 дней. Стоимость рассчитает менеджер.</p></div>
+    </div>
+  </div>
+</section>
+<section class="wrap sec"><div class="sec-head"><h2>Похожие товары</h2><a class="more" href="catalog.html">Весь каталог <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a></div><div class="grid" id="similar" data-live></div></section>
+<div class="sticky-buy" id="sticky"><div class="p"></div><button class="btn coral" id="buy2">В корзину</button></div>
+</main>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Каталог — Порт 41</title>
+<meta name="description" content="Икра, рыба, краб, креветки и морепродукты с Дальнего Востока. Цены за кг и упаковку.">
+<meta name="theme-color" content="#FBF7F0">
+<link rel="icon" href="assets/mark-on-light.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="catalog">
+<main>
+
+<section class="wrap page-head">
+  <div class="crumbs"><a href="index.html">Главная</a><span>/</span><span>Каталог</span></div>
+  <h1 id="cat-title">Каталог</h1>
+  <p class="lead" id="cat-lead"></p>
+  <div class="scroll-x" id="chips" style="margin-top:20px"></div>
+  <div class="toolbar"><span class="count" id="count"></span>
+    <label><span class="vh">Сортировка</span><select class="sort" id="sort"><option value="pop">Сначала популярные</option><option value="new">Сначала новинки</option><option value="asc">Дешевле</option><option value="desc">Дороже</option></select></label></div>
+</section>
+<section class="wrap" style="margin-top:18px"><div class="grid" id="grid" data-live></div></section>
+<section class="wrap sec">
+  <div class="steps" style="margin-top:0">
+    <div class="step"><div class="n">i</div><b>Весовой товар</b><p>Взвешиваем перед отправкой — итоговая сумма может отличаться в пределах 10%. Менеджер уточнит вес при подтверждении.</p></div>
+    <div class="step"><div class="n">℃</div><b>Холодовая цепь</b><p>Хранение при −18 °C, доставка в термобоксах с хладоэлементами.</p></div>
+    <div class="step dark"><div class="n">%</div><b>Оптовые цены</b><p>От 10 кг — персональный прайс. <a href="wholesale.html" style="text-decoration:underline">Подробнее для оптовиков</a></p></div>
+  </div>
+</section>
+</main>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
