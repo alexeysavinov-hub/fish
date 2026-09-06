@@ -189,7 +189,7 @@ p{margin:0;text-wrap:pretty}
 
 /* ---------- Журнал ---------- */
 .news-list{display:flex;flex-direction:column;margin-top:18px}
-.news-item{display:grid;grid-template-columns:1fr 22px;gap:12px;align-items:center;padding:18px 0;border-top:1px solid var(--line2)}
+.news-item{display:grid;grid-template-columns:minmax(0,1fr) 22px;gap:12px;align-items:center;padding:18px 0;border-top:1px solid var(--line2)}
 .news-item:last-child{border-bottom:1px solid var(--line2)}
 .news-item small{display:block;font-size:13px;color:var(--mute);margin-bottom:4px}
 .news-item b{font-weight:600;font-size:16px;line-height:1.35}
@@ -356,6 +356,10 @@ p{margin:0;text-wrap:pretty}
 }
 
 /* ================= Десктоп ================= */
+@media (min-width:1024px) and (max-width:1279px){
+  .header nav.main a:not(.cat-link):nth-child(n+5){display:none}
+  .header .phone span{display:none}
+}
 @media (min-width:1024px){
   :root{--pad:40px;--head-h:88px}
   body{padding-bottom:0}
@@ -372,15 +376,17 @@ p{margin:0;text-wrap:pretty}
   .header{background:#fff;backdrop-filter:none}
   .header .wrap{gap:28px}
   .brand img{height:50px}.brand b{font-size:22px}.brand small{font-size:10px}
-  .header nav.main{display:flex;gap:24px;font-size:15px;font-weight:500;align-items:center}
+  .header nav.main{display:flex;gap:24px;font-size:15px;font-weight:500;align-items:center;white-space:nowrap}
+  .header .acts{flex:none}
   .header nav.main a:hover{color:var(--coral)}
   .header nav.main .cat-link{display:flex;align-items:center;gap:8px;font-weight:600}
   .header nav.main .cat-link svg{width:18px;height:18px}
-  .header .phone{display:block;text-align:right;line-height:1.1}
-  .header .phone a{font-weight:700;font-size:16px}
+  .header .phone{display:block;text-align:right;line-height:1.1;white-space:nowrap;flex:none}
+  .header .phone a{font-weight:700;font-size:16px;white-space:nowrap}
   .header .phone span{display:block;font-size:12px;color:var(--mute);margin-top:4px}
   .header .acts{gap:8px}
   .header .acts .icon-btn{width:46px;height:46px;border:1px solid var(--line2);background:#fff}
+  .header .acts [data-mobile-only]{display:none}
   .header .burger{display:none}
   .header .cart-btn{display:inline-flex;height:46px;padding:0 20px 0 16px}
   .header .cart-btn .badge-count{top:-6px;right:-4px;background:var(--ink)}
@@ -421,7 +427,8 @@ p{margin:0;text-wrap:pretty}
   .stats{gap:36px;margin-top:36px}.stats b{font-size:34px}.stats span{font-size:13px}
   .journal{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
   .journal .news-list{margin-top:0}
-  .news-item{grid-template-columns:130px 1fr 24px;gap:24px;padding:24px 0}
+  .news-item{grid-template-columns:minmax(0,1fr) 24px;gap:24px;padding:24px 0}
+  .news-item>span{display:grid;grid-template-columns:130px minmax(0,1fr);gap:24px;align-items:center}
   .news-item small{margin:0;font-size:14px}.news-item b{font-size:19px}
   .wh-card{flex-direction:row;align-items:center;justify-content:space-between;padding:48px 56px;border-radius:32px;gap:40px}
   .wh-card h3{font-size:34px}

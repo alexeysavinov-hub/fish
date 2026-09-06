@@ -1,4 +1,4 @@
-/* Порт 41 — общая логика: шапка, меню, поиск, корзина, избранное, рендер страниц. */
+/* Порт 41 - общая логика: шапка, меню, поиск, корзина, избранное, рендер страниц. */
 (function () {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -82,14 +82,14 @@
       <nav class="sub">${infoLinks}</nav>
       <div class="drawer-foot"><a class="tel" href="tel:${P41.PHONE_RAW}">${P41.PHONE}</a><span class="mute" style="font-size:13px">${P41.HOURS}</span><div style="display:flex;gap:8px"><a class="btn white sm" href="https://t.me/port41" target="_blank" rel="noopener">Telegram</a><a class="btn white sm" href="https://wa.me/79510404141" target="_blank" rel="noopener">WhatsApp</a></div></div>`;
     const se = document.createElement('div'); se.className = 'search';
-    se.innerHTML = `<div class="search-bar"><input type="search" placeholder="Икра, нерка, краб…" aria-label="Поиск по каталогу" autocomplete="off"><button class="icon-btn" style="border:0" data-close="1" aria-label="Закрыть">${I.close}</button></div><div class="search-res"><div class="empty">Начните вводить название — например, «нерка»</div></div>`;
+    se.innerHTML = `<div class="search-bar"><input type="search" placeholder="Икра, нерка, краб…" aria-label="Поиск по каталогу" autocomplete="off"><button class="icon-btn" style="border:0" data-close="1" aria-label="Закрыть">${I.close}</button></div><div class="search-res"><div class="empty">Начните вводить название - например, «нерка»</div></div>`;
     const ft = document.createElement('footer'); ft.className = 'footer';
     ft.innerHTML = `<div class="wrap"><div class="footer-grid">
-      <div><img class="logo" src="assets/logo-on-light.png" alt="Порт 41"><p>Рыба и морепродукты с Дальнего Востока — в розницу, оптом и для HoReCa. Доставка по Москве и всей России.</p><div class="soc"><a href="https://t.me/port41" target="_blank" rel="noopener">Telegram</a><a href="https://wa.me/79510404141" target="_blank" rel="noopener">WhatsApp</a></div></div>
+      <div><img class="logo" src="assets/logo-on-light.png" alt="Порт 41"><p>Рыба и морепродукты с Дальнего Востока - в розницу, оптом и для HoReCa. Доставка по Москве и всей России.</p><div class="soc"><a href="https://t.me/port41" target="_blank" rel="noopener">Telegram</a><a href="https://wa.me/79510404141" target="_blank" rel="noopener">WhatsApp</a></div></div>
       <details><summary>Каталог</summary><div class="col">${catLinks()}</div></details>
       <details><summary>Покупателям</summary><div class="col">${infoLinks}</div></details>
       <div class="col"><div class="col-title">Контакты</div><a class="tel" href="tel:${P41.PHONE_RAW}">${P41.PHONE}</a><span>${P41.HOURS}</span><a href="mailto:${P41.EMAIL}">${P41.EMAIL}</a><span>${P41.ADDRESS}</span></div>
-      </div><div class="copy"><span>© 2026 Порт 41 — интернет-магазин рыбы и морепродуктов</span><span>* Условия доставки в день заказа уточняйте у менеджера</span><a href="#">Политика конфиденциальности</a></div></div>`;
+      </div><div class="copy"><span>© 2026 Порт 41 - интернет-магазин рыбы и морепродуктов</span><span>* Условия доставки в день заказа уточняйте у менеджера</span><a href="#">Политика конфиденциальности</a></div></div>`;
     const toastEl = document.createElement('div'); toastEl.className = 'toast'; toastEl.id = 'toast';
     document.body.prepend(head); document.body.prepend(top);
     document.body.append(ft, tab, ov, dr, se, toastEl);
@@ -121,7 +121,7 @@
   }
   function search(q, box) {
     q = q.trim().toLowerCase();
-    if (q.length < 2) { box.innerHTML = '<div class="empty">Начните вводить название — например, «нерка»</div>'; return; }
+    if (q.length < 2) { box.innerHTML = '<div class="empty">Начните вводить название - например, «нерка»</div>'; return; }
     const res = P41.PRODUCTS.filter(p => (p.name + ' ' + p.sub + ' ' + catById(p.cat).name).toLowerCase().includes(q));
     box.innerHTML = res.length ? res.map(p => `<a class="search-row" href="product.html?id=${p.id}"><img src="${IMG}${p.img}" alt=""><span><b>${p.name}</b><span>${p.sub}</span></span><span class="price">${fmt(p.price)}${p.unit}</span></a>`).join('') : '<div class="empty">Ничего не нашли. Попробуйте «икра» или «краб»</div>';
   }
@@ -147,7 +147,7 @@
       <div class="foot"><div><div class="price">${fmt(p.price)}<small>${p.unit}</small></div>${p.old ? `<div class="old">${fmt(p.old)}</div>` : ''}</div>${ctrl}</div></div></article>`;
   }
   function renderGrid(el, list, emptyHTML) {
-    el.innerHTML = list.length ? list.map(cardHTML).join('') : (emptyHTML || '<div class="empty-state" style="grid-column:1/-1"><h3>Пока пусто</h3>Загляните в каталог — там точно найдётся что-то вкусное.<br><br><a class="btn" href="catalog.html">В каталог</a></div>');
+    el.innerHTML = list.length ? list.map(cardHTML).join('') : (emptyHTML || '<div class="empty-state" style="grid-column:1/-1"><h3>Пока пусто</h3>Загляните в каталог - там точно найдётся что-то вкусное.<br><br><a class="btn" href="catalog.html">В каталог</a></div>');
   }
   document.addEventListener('click', e => {
     const inc = e.target.closest('[data-inc]'), dec = e.target.closest('[data-dec]'), f = e.target.closest('[data-fav]');
@@ -181,8 +181,8 @@
       if (sort === 'pop') l = [...l].sort((a, b) => b.tags.includes('hit') - a.tags.includes('hit'));
       renderGrid(grid, l);
       const c = catById(cat);
-      title.textContent = c ? c.name : 'Каталог'; lead.textContent = c ? c.desc : 'Рыба, икра, краб и морепродукты с Дальнего Востока. Весовой товар взвешиваем перед отправкой — итоговая сумма может немного отличаться.';
-      document.title = (c ? c.name : 'Каталог') + ' — Порт 41';
+      title.textContent = c ? c.name : 'Каталог'; lead.textContent = c ? c.desc : 'Рыба, икра, краб и морепродукты с Дальнего Востока. Весовой товар взвешиваем перед отправкой - итоговая сумма может немного отличаться.';
+      document.title = (c ? c.name : 'Каталог') + ' - Порт 41';
       count.textContent = l.length + ' ' + plural(l.length, ['товар', 'товара', 'товаров']);
       const on = chips.querySelector('.chip.on'); if (on) chips.scrollTo({ left: on.offsetLeft - 16, behavior: 'smooth' });
     };
@@ -194,7 +194,7 @@
   function pageProduct() {
     const p = byId(qs.get('id')) || P41.PRODUCTS[0];
     const c = catById(p.cat);
-    document.title = p.name + ' — Порт 41';
+    document.title = p.name + ' - Порт 41';
     let opt = p.opts ? p.opts[0][0] : null;
     const mult = () => p.opts ? p.opts.find(o => o[0] === opt)[1] : 1;
     const price = () => Math.round(p.price * mult());
@@ -213,7 +213,7 @@
     $('#qty').addEventListener('click', e => { if (e.target.dataset.q === '-') q = Math.max(1, q - 1); if (e.target.dataset.q === '+') q++; qEl.textContent = q; });
     const buy = () => addToCart(p.id, opt, q);
     $('#buy').addEventListener('click', buy); $('#buy2').addEventListener('click', buy);
-    $('#desc').innerHTML = `<p>${p.desc}</p><p>Весовой товар взвешиваем перед отправкой — итоговая сумма может отличаться в пределах 10%. Перед покупкой можно попробовать: спросите менеджера о дегустации.</p>`;
+    $('#desc').innerHTML = `<p>${p.desc}</p><p>Весовой товар взвешиваем перед отправкой - итоговая сумма может отличаться в пределах 10%. Перед покупкой можно попробовать: спросите менеджера о дегустации.</p>`;
     $('#spec').innerHTML = Object.entries(p.spec || {}).map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
     $$('#pd-tabs button').forEach(b => b.addEventListener('click', () => { $$('#pd-tabs button').forEach(x => x.classList.remove('on')); b.classList.add('on'); $$('.pd-panel').forEach(x => x.classList.toggle('hidden', x.id !== b.dataset.panel)); }));
     const sim = $('#similar'); const draw = () => renderGrid(sim, P41.PRODUCTS.filter(x => x.cat === p.cat && x.id !== p.id).concat(P41.PRODUCTS.filter(x => x.tags.includes('hit') && x.cat !== p.cat)).slice(0, 4));
@@ -250,11 +250,11 @@
     draw();
   }
   function pageFavorites() {
-    const g = $('#grid'); const draw = () => renderGrid(g, P41.PRODUCTS.filter(p => fav[p.id]), '<div class="empty-state" style="grid-column:1/-1"><h3>В избранном пока пусто</h3>Нажмите ♥ на товаре — и он появится здесь.<br><br><a class="btn" href="catalog.html">В каталог</a></div>');
+    const g = $('#grid'); const draw = () => renderGrid(g, P41.PRODUCTS.filter(p => fav[p.id]), '<div class="empty-state" style="grid-column:1/-1"><h3>В избранном пока пусто</h3>Нажмите ♥ на товаре - и он появится здесь.<br><br><a class="btn" href="catalog.html">В каталог</a></div>');
     g.addEventListener('rerender', draw); draw();
   }
   function pageNews() { $('#articles').innerHTML = P41.NEWS.map((n, i) => `<article class="article" id="n${i}"><small>${n.date}</small><h3>${n.title}</h3><p>${n.text}</p></article>`).join(''); }
-  function pageForm() { // оптовикам / контакты — форма заявки
+  function pageForm() { // оптовикам / контакты - форма заявки
     $$('form[data-lead]').forEach(f => f.addEventListener('submit', e => { e.preventDefault(); const ph = f.querySelector('[name=phone]'); if (!ph.value.replace(/\D/g, '').length) { ph.classList.add('err'); return; } f.innerHTML = `<div class="success"><div class="ok">${I.check}</div><h3>Заявка отправлена</h3><p>Перезвоним в рабочее время: ${P41.HOURS}.</p></div>`; }));
   }
   function plural(n, f) { n = Math.abs(n) % 100; const n1 = n % 10; if (n > 10 && n < 20) return f[2]; if (n1 > 1 && n1 < 5) return f[1]; if (n1 === 1) return f[0]; return f[2]; }
